@@ -28,7 +28,7 @@ Suivez les étapes ci-dessous pour configurer le projet localement.
 Utilisez la commande suivante pour cloner le dépôt sur votre machine locale :
 
 ```bash
-git clone https://github.com/ivanDev237/Sawa-web-front.git
+git clone https://github.com/ivanDev237/Sawa-web-front-app.git
 ```
 
 2. Déplacez-vous dans le répertoire du projet
