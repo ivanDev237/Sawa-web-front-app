@@ -68,19 +68,19 @@ const SignupPage1: React.FC = () => {
               placeholder="●●●●●●●"
               errors={errors.password}
               touched={touched.password}
+              className={"relative"}
             />
 
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full py-3 px-4 bg-primary_Green text-white rounded-md font-medium hover:bg-green-700 mt-3"
+              className="w-full py-3 px-4 bg-primary-light text-white rounded-md font-medium hover:bg-green-700 mt-3"
             >
               next
             </button>
           </Form>
         )}
       </Formik>
-
     </div>
   );
 };
