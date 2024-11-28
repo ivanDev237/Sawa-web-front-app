@@ -1,28 +1,50 @@
-import BtnAct from "../../../components/Button";
+import { Link } from "react-router-dom";
+import Button from "../../../components/Button";
 import { images } from "../../../constants/images";
+import { PATH_PARTNERS, PATH_SUPER_ADMIN } from "../../../constants/paths";
+import usersRole from "../../../constants/UsersRole";
 
 const Error404 = () => {
   return (
-    <div className="w-full min-h-screen flex justify-center bg-div_BgColors flex-col items-center">
-      <div className="mt-10 mb-5 w-full max-w-xs sm:w-96 flex justify-center">
-        <img
-          src={images.notFound}
-          alt="page notFound img"
-          className="w-full max-w-xs md:max-w-md"
-        />
-      </div>
-      <div className="text-center grid grid-cols-1 grid-rows-2 items-center px-4 mb-6">
-        <h1 className="text-xl sm:text-2xl font-semibold">
+    <div
+      className={
+        "flex items-center justify-center min-h-full h-full  bg-gray-100 py-10 dark:bg-slate-900"
+      }
+    >
+      <div className="w-full max-w-md h-full p-6 bg-white rounded-lg dark:bg-slate-800 transition-colors shadow-lg text-center flex flex-col">
+        <div className=" h-3/5">
+          <img
+            src={images.notFound}
+            alt="Server Down"
+            className="mx-auto mb-6 max-w-full h-full object-cover"
+          />
+        </div>
+        <h3 className="text-xl font-semibold text-gray-800 mb-4 mt-2 dark:text-slate-50">
           We couldn’t connect the dots
-        </h1>
-
-        <p className="text-sm sm:text-base md:text-lg w-[80%] sm:w-[75%] mx-auto">
-          This page was not found. You may have mistyped the address or the page
-          may have moved.
+        </h3>
+        <p className="text-sm text-gray-600 mb-6 dark:text-slate-50">
+          This page was not found. You may have mistyped the address or
+          <br /> the page may have moved.
         </p>
-      </div>
 
-      <BtnAct>Take me back to home</BtnAct>
+        <Button
+          className={`border-2 border-solid border-primary-light dark:border-primary-dark bg-primary-light dark:bg-primary-dark text-white mx-auto hover:bg-primary-light hover:border-primary-light cursor-pointer font-light`}
+          onClick={(e) => {
+            e.preventDefault();
+          }}
+        >
+          {
+            <Link
+              to={
+                usersRole.roleAdmin ? PATH_SUPER_ADMIN.HOME : PATH_PARTNERS.HOME
+              }
+            >
+              {" "}
+              Back To Home
+            </Link>
+          }
+        </Button>
+      </div>
     </div>
   );
 };

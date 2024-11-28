@@ -1,0 +1,29 @@
+.sidebar {
+    transition: background-color, width 0.3s;
+}
+
+.sidebar ul {
+   
+    list-style-type: none;
+}
+
+.sidebar li {
+    margin-bottom: 1rem;
+}
+
+.sidebar .flex {
+    align-items: center;
+}
+
+
+.sidebar ion-icon {
+    font-size: 1.1rem;
+    color: rgb(177, 177, 177);
+}
+
+
+
+.sidebar ion-icon:hover {
+    color: black;
+}
+
