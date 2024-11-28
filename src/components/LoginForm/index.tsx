@@ -3,6 +3,7 @@ import { Eye, EyeOff } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 import * as Yup from "yup";
 import { images } from "../../constants/images";
+import { PATH_AUTH } from "../../constants/paths";
 
 interface LoginFormValues {
   email: string;
@@ -65,7 +66,7 @@ const LoginForm: React.FC = () => {
         touched,
         isSubmitting,
       }: FormikProps<LoginFormValues>) => (
-        <Form className="w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-md  overflow-hidden">
+        <Form className="w-full max-w-md mx-auto p-6 bg-white  rounded-lg shadow-md  overflow-hidden">
           <div className="text-center mb-6 z-40 relative select-none">
             <img
               src={images.sawa_logo}
@@ -154,7 +155,7 @@ const LoginForm: React.FC = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-4 px-4 bg-primary_Green text-white font-medium rounded-md hover:bg-green-700 focus:outline-none  duration-300 cursor-pointer"
+            className="w-full py-4 px-4 bg-primary-light text-white font-medium rounded-md hover:bg-green-700 focus:outline-none  duration-300 cursor-pointer"
           >
             Login
           </button>
@@ -164,7 +165,10 @@ const LoginForm: React.FC = () => {
           <div className="text-center">
             <p className="text-sm text-gray-700">
               Don’t have an account?{" "}
-              <a href="/signup" className="text-primary_Green hover:underline">
+              <a
+                href={PATH_AUTH.REGISTER}
+                className="text-primary-light hover:underline"
+              >
                 register as an owner
               </a>
             </p>
@@ -176,177 +180,3 @@ const LoginForm: React.FC = () => {
 };
 
 export default LoginForm;
-
-// import React, { useState } from "react";
-// import { Formik, Form } from "formik";
-// import * as Yup from "yup";
-// import FormInput from "../../components/FormInput";
-
-// interface LoginFormValues {
-//   email: string;
-//   password: string;
-// }
-
-// const LoginForm: React.FC = () => {
-//   const [isSubmitting, setIsSubmitting] = useState(false);
-
-//   const initialValues: LoginFormValues = {
-//     email: "",
-//     password: "",
-//   };
-
-//   const validationSchema = Yup.object({
-//     email: Yup.string()
-//       .email("Invalid email format")
-//       .required("Email is required"),
-//     password: Yup.string().required("Password is required"),
-//   });
-
-//   const handleSubmit = (values: LoginFormValues) => {
-//     setIsSubmitting(true);
-//     console.log("Login values:", values);
-//      Simulate API call
-//     setTimeout(() => {
-//       setIsSubmitting(false);
-//       alert("Logged in successfully!");
-//     }, 2000);
-//   };
-
-//   return (
-//     <Formik
-//       initialValues={initialValues}
-//       validationSchema={validationSchema}
-//       onSubmit={handleSubmit}
-//     >
-//       {({ errors, touched }) => (
-//         <Form className="w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
-//           <h2 className="text-xl font-semibold text-center text-gray-800 mb-6">
-//             Login
-//           </h2>
-
-//           {/* Email */}
-//           <FormInput
-//             name="email"
-//             type="email"
-//             label="Email"
-//             placeholder="example@domain.com"
-//             errors={errors.email}
-//             touched={touched.email}
-//           />
-
-//           {/* Password */}
-//           <FormInput
-//             name="password"
-//             type="password"
-//             label="Password"
-//             placeholder="●●●●●●●"
-//             errors={errors.password}
-//             touched={touched.password}
-//           />
-
-//           {/* Submit Button */}
-//           <button
-//             type="submit"
-//             disabled={isSubmitting}
-//             className={`w-full py-3 px-4 rounded-md font-medium text-white transition duration-300 ${
-//               isSubmitting
-//                 ? "bg-gray-400 cursor-not-allowed"
-//                 : "bg-primary_Green hover:bg-green-700"
-//             }`}
-//           >
-//             {isSubmitting ? "Loading..." : "Login"}
-//           </button>
-//         </Form>
-//       )}
-//     </Formik>
-//   );
-// };
-
-// export default LoginForm;
-
-//  import { Form, Formik } from "formik";
-//  import React, { useState } from "react";
-//  import * as Yup from "yup";
-//  import FormInput from "../../components/FormInput";
-
-//  interface LoginFormValues {
-//    email: string;
-//    password: string;
-//  }
-
-//  const LoginForm: React.FC = () => {
-//    const [isSubmitting, setIsSubmitting] = useState(false);
-
-//    const initialValues: LoginFormValues = {
-//      email: "",
-//      password: "",
-//    };
-
-//    const validationSchema = Yup.object({
-//      email: Yup.string()
-//        .email("Invalid email format")
-//        .required("Email is required"),
-//      password: Yup.string().required("Password is required"),
-//    });
-
-//    const handleSubmit = (values: LoginFormValues) => {
-//      setIsSubmitting(true);
-//      console.log("Login values:", values);
-//       Simulate API call
-//      setTimeout(() => {
-//        setIsSubmitting(false);
-//        alert("Logged in successfully!");
-//      }, 2000);
-//    };
-
-//    return (
-//      <Formik
-//        initialValues={initialValues}
-//        validationSchema={validationSchema}
-//        onSubmit={handleSubmit}
-//      >
-//        {({ errors, touched }) => (
-//          <Form className="w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
-//            <h2 className="text-xl font-semibold text-center text-gray-800 mb-6">
-//              Login
-//            </h2>
-
-//            {/* Email */}
-//            <FormInput
-//              name="email"
-//              type="email"
-//              label="Email"
-//              placeholder="example@domain.com"
-//              errors={errors.email}
-//              touched={touched.email}
-//            />
-
-//            {/* Password */}
-//            <FormInput
-//              name="password"
-//              type="password"
-//              label="Password"
-//              placeholder="●●●●●●●"
-//              errors={errors.password}
-//              touched={touched.password}
-//            />
-
-//            {/* Submit Button */}
-//            <button
-//              type="submit"
-//              disabled={isSubmitting}
-//              className={`w-full py-3 px-4 rounded-md font-medium text-white transition duration-300 ${
-//                isSubmitting
-//                  ? "bg-gray-400 cursor-not-allowed"
-//                  : "bg-primary_Green hover:bg-green-700"
-//              }`}
-//            >
-//              {isSubmitting ? "Loading..." : "Login"}
-//            </button>
-//          </Form>
-//        )}
-//      </Formik>
-//    );
-//  };
-
-//  export default LoginForm;
