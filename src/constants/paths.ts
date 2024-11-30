@@ -1,6 +1,35 @@
 export const PATH_PARTNERS = {
   HOME: "/partner",
+
+  MY_SHOP: [
+    {
+      BASE: "my_shop", // Retirer le slash initial
+      PRODUCT_LIST: "productlist", // Retirer le slash initial
+      PUBLICATIONS: "publications", // Retirer le slash initial
+      PRODUCT_PROMOTION: "promotions", // Retirer le slash initial
+    },
+  ],
+
+  PRODUCTS: "/partner/products",
+
+  ORDERS: "/partner/orders",
+
+  SUBSCRIPTION_AREA: [
+    {
+      BASE: "/partner/subscription_area", // Garder le slash initial car c'est un chemin parent
+    },
+  ],
+
+  GLOBAL_STATUS: "/partner/global_status",
+
+  NOTIFICATION_SETTINGS: "/partner/notification_settings",
 };
+
+
+
+
+
+
 export const PATH_SUPER_ADMIN = {
   HOME: "/admin/dashboard",
 
@@ -80,3 +109,4 @@ export const PATH_AUTH = {
   VERIFY_OTP: "/auth/verify-otp",
   SUCCESS_VERIFY_OTP: "/auth/success-verify-otp",
 };
+
