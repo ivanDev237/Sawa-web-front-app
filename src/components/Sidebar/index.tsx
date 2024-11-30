@@ -111,7 +111,7 @@
 //               ) : (
 //                 // Element sans sous-menu : simple lien
 //                 <NavLink
-//                   to={navbarLink.link || "#"}
+//                   to={navbarLink.link || "#"}  
 //                   className={cn(
 //                     "sidebar-item flex items-center",
 //                     collapsed ? "justify-center" : "justify-start"
