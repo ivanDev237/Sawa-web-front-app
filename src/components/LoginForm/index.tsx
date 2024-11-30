@@ -1,9 +1,15 @@
 import { Form, Formik, FormikProps } from "formik";
 import { Eye, EyeOff } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import { images } from "../../constants/images";
-import { PATH_AUTH } from "../../constants/paths";
+import {
+  PATH_AUTH,
+  PATH_PARTNERS,
+  PATH_SUPER_ADMIN,
+} from "../../constants/paths";
+import usersRole from "../../constants/UsersRole";
 
 interface LoginFormValues {
   email: string;
@@ -157,7 +163,13 @@ const LoginForm: React.FC = () => {
             disabled={isSubmitting}
             className="w-full py-4 px-4 bg-primary-light text-white font-medium rounded-md hover:bg-green-700 focus:outline-none  duration-300 cursor-pointer"
           >
-            Login
+            <Link
+              to={
+                usersRole.roleAdmin ? PATH_SUPER_ADMIN.HOME : PATH_PARTNERS.HOME
+              }
+            >
+              Login
+            </Link>
           </button>
 
           <div className="text-center my-6 text-gray-500">Or</div>

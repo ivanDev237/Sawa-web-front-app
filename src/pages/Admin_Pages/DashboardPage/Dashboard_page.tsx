@@ -1,3 +1,4 @@
+import { message, Popconfirm, PopconfirmProps } from "antd";
 import {
   Package2,
   PencilLine,
@@ -24,6 +25,10 @@ import {
   topProducts,
 } from "../../../constants/overviewData";
 import { useTheme } from "../../../hooks/useTheme";
+
+const confirm: PopconfirmProps["onConfirm"] = () => {
+  message.success("deleted sucessfully!");
+};
 
 const dashboardItems = [
   {
@@ -209,7 +214,16 @@ const DashboardPage = () => {
                           <PencilLine size={20} />
                         </button>
                         <button className="text-red-500">
-                          <Trash size={20} />
+                          <Popconfirm
+                            title="delete the element"
+                            description="Are you sure to delete tis element ?"
+                            onConfirm={confirm}
+                            okText="Yes"
+                            cancelText="No"
+                            className="bg-slate-50 dark:bg-slate-900"
+                          >
+                            <Trash size={20} />
+                          </Popconfirm>
                         </button>
                       </div>
                     </td>

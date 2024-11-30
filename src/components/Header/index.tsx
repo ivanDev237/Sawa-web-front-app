@@ -45,8 +45,8 @@ const Header: React.FC<HeaderInterface> = (props) => {
           className="btn-ghost size-10"
           onClick={() => setTheme(theme === "light" ? "dark" : "light")}
         >
-          <Sun size={20} className="block dark:hidden" />
-          <Moon size={20} className="dark:block hidden" />
+          <Sun size={20} className="dark:block hidden" />
+          <Moon size={20} className="block dark:hidden " />
         </button>
         <button className="btn-ghost size-10">
           <Bell size={20} />
