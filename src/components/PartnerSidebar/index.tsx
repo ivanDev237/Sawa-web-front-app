@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import sawa_logo from "../../Assets/imgs/sawa_logo.jpg";
+import sawa_logo from "../../Assets/imgs/SellerImgs/sawa_logo.jpg";
 import { useNavigate } from "react-router-dom";
 import PartnerMenuListes from "../../constants/sideBarPartnerLinks";
 import "./style.css";

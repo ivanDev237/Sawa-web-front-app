@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MoreVertical } from 'lucide-react'; // Importing the three-dots icon
-import Casque from '../../../../Assets/imgs/Casque sans fil.png';
-import PS5 from '../../../../Assets/imgs/PS5.png';
+import Casque from '../../../../Assets/imgs/SellerImgs/Casque sans fil.png';
+import PS5 from '../../../../Assets/imgs/SellerImgs/PS5.png';
 
 const ProductPromotion = () => {
     const [products, setProducts] = useState([

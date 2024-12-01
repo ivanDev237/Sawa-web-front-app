@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Search, ChevronDown, MenuIcon } from "lucide-react";
-import woman from "../../Assets/imgs/woman.jpeg";
+import woman from "../../Assets/imgs/SellerImgs/woman.jpeg"
 import LanguageDropdown from "../LanguageDropdown";
 import SearchModal from "../../Modals/SearchModal";
 

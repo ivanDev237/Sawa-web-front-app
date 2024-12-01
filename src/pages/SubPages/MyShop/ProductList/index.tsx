@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { MoreVertical } from 'lucide-react';
 import EditProductModal from '../../../../Modals/EditProductModal';
-import Samsung from '../../../../Assets/imgs/Samsung S21.png';
-import TV from '../../../../Assets/imgs/TV OLED.png';
-import Apple from '../../../../Assets/imgs/Apple watch.png';
-import Tablet from '../../../../Assets/imgs/Drawing tablet.png';
-import Macbook from '../../../../Assets/imgs/Drawing tablet.png'
+import Samsung from '../../../../Assets/imgs/SellerImgs/Samsung S21.png';
+import TV from '../../../../Assets/imgs/SellerImgs/TV OLED.png';
+import Apple from '../../../../Assets/imgs/SellerImgs/Apple watch.png';
+import Tablet from '../../../../Assets/imgs/SellerImgs/Drawing tablet.png';
+import Macbook from '../../../../Assets/imgs/SellerImgs/Drawing tablet.png'
 
 // Define the Product type
 interface Product {

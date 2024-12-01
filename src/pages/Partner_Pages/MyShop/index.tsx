@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { Star, Phone, Users } from "lucide-react"; 
-import woman from "../../../Assets/imgs/woman.jpeg";
+import woman from "../../../Assets/imgs/SellerImgs/woman.jpeg";
 import { PATH_PARTNERS } from "../../../constants/paths"; // Import des chemins
 
 const MyShop: React.FC = () => {
