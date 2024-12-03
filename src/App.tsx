@@ -7,7 +7,7 @@ import partnersLinks from "./routes/partnerLinks";
 function App() {
   const routes = createBrowserRouter([
     ...dashboardAdminLinks,
-    partnersLinks,
+    ...partnersLinks,
     ...authLinks,
 
     {
@@ -24,4 +24,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
