@@ -9,7 +9,7 @@ import store from "./store/store";
 function App() {
   const routes = createBrowserRouter([
     ...dashboardAdminLinks,
-    partnersLinks,
+    ...partnersLinks,
     ...authLinks,
 
     {
