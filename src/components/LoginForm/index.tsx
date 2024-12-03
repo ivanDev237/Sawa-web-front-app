@@ -3,7 +3,8 @@ import { Eye, EyeOff } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 import * as Yup from "yup";
 import { images } from "../../constants/images";
-import { PATH_AUTH } from "../../constants/paths";
+import { PATH_AUTH, PATH_SUPER_ADMIN } from "../../constants/paths";
+import { NavLink } from "react-router-dom";
 
 interface LoginFormValues {
   email: string;
@@ -157,8 +158,10 @@ const LoginForm: React.FC = () => {
             disabled={isSubmitting}
             className="w-full py-4 px-4 bg-primary-light text-white font-medium rounded-md hover:bg-green-700 focus:outline-none  duration-300 cursor-pointer"
           >
+            <NavLink to={PATH_SUPER_ADMIN.HOME} >
             Login
-          </button>
+            </NavLink>
+                      </button>
 
           <div className="text-center my-6 text-gray-500">Or</div>
 
