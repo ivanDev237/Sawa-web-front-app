@@ -1,14 +1,7 @@
 import { message, Popconfirm, PopconfirmProps } from "antd";
-import {
-  Package2,
-  PencilLine,
-  ShoppingBasket,
-  Star,
-  Trash,
-  TrendingDown,
-  TrendingUp,
-  UsersRound,
-} from "lucide-react";
+import { format } from "date-fns";
+
+import { Download, Eye, Star } from "lucide-react";
 import numeral from "numeral";
 import {
   Area,
@@ -18,65 +11,87 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import DashboardCard from "../../../components/DashboardCard";
+import LoadingSpinner from "../../../components/LoadingSpinner";
+import StatCard from "../../../components/StatsCard";
 import {
   overviewData,
   recentSalesData,
   topProducts,
 } from "../../../constants/overviewData";
+import { useDashboard } from "../../../hooks/useDashboard";
 import { useTheme } from "../../../hooks/useTheme";
 
 const confirm: PopconfirmProps["onConfirm"] = () => {
-  message.success("deleted sucessfully!");
+  message.success("sucessfully hidded!");
 };
 
-const dashboardItems = [
-  {
-    title: "Active vendors",
-    titleIcon: <UsersRound />,
-    contain: 42302,
-    trendingcontain: 25,
-    trending_icon: <TrendingUp />,
-  },
-  {
-    title: "Total orders",
-    titleIcon: <ShoppingBasket />,
-    contain: 43700,
-    trendingcontain: 18,
-    trending_icon: <TrendingUp />,
-  },
-  {
-    title: "Total Sales",
-    titleIcon: <Package2 />,
-    contain: 73209,
-    trendingcontain: 34,
-    trending_icon: <TrendingDown />,
-  },
-  {
-    title: "All Customers",
-    titleIcon: <UsersRound />,
-    contain: 8703,
-    trendingcontain: 81,
-    trending_icon: <TrendingUp />,
-  },
-];
-
 const DashboardPage = () => {
+  const {
+    isLoading: statsLoading,
+    dateRange,
+    setDateRange,
+    dashboardItems,
+  } = useDashboard();
+
   const { theme } = useTheme();
+
+  const handleDownloadReport = () => {
+    // Simulate report download
+    const element = document.createElement("a");
+    element.href = URL.createObjectURL(
+      new Blob(["Sales Data"], { type: "text/plain" })
+    );
+    element.download = `sales-report-${format(new Date(), "yyyy-MM-dd")}.txt`;
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+  };
   return (
     <div className="flex flex-col gap-y-4">
-      <h1 className="title">Dashboard</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        {dashboardItems.map((item) => (
-          <DashboardCard
-            icon={item.titleIcon}
-            title={item.title}
-            percentageChange={item.trendingcontain}
-            value={item.contain}
-            trendingIcon={item.trending_icon}
-          />
-        ))}
+      <div className="flex-col flex md:flex-row md:justify-between items-start md:items-center justify-start">
+        <div className="mb-2 md:mb-0">
+          <h1 className="text-2xl font-bold dark:text-slate-100">Dashboard</h1>
+          <p className="text-gray-500 dark:text-slate-100">
+            Welcome back, let's check your stats
+          </p>
+        </div>
+        <div className="flex gap-4">
+          <select
+            value={dateRange}
+            onChange={(e) =>
+              setDateRange(e.target.value as "week" | "month" | "year")
+            }
+            className="bg-gray-200 dark:bg-slate-100 border border-gray-300 rounded-lg px-4 py-2 outline-none"
+          >
+            <option value="week">This Week</option>
+            <option value="month">This Month</option>
+            <option value="year">This Year</option>
+          </select>
+          <button
+            onClick={handleDownloadReport}
+            className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            <Download className="w-4 h-4" />
+            Download Report
+          </button>
+        </div>
       </div>
+
+      {statsLoading ? (
+        <LoadingSpinner />
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          {dashboardItems.map((item, index) => (
+            <StatCard
+              key={index}
+              title={item.title}
+              value={item.contain}
+              trend={item.trend}
+              icon={item.titleIcon}
+            />
+          ))}
+        </div>
+      )}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-7">
         <div className="card col-span-1 md:col-span-2 lg:col-span-4">
           <div className="card-header">
@@ -209,20 +224,20 @@ const DashboardPage = () => {
                       </div>
                     </td>
                     <td className="table-cell">
-                      <div className="flex items-center gap-x-4">
+                      <div className="flex items-center gap-x-5 justify-center">
                         <button className="text-blue-500 dark:text-blue-600">
-                          <PencilLine size={20} />
+                          <Eye size={18} />
                         </button>
-                        <button className="text-red-500">
+                        <button className="dark:text-gray-200 mb-3">
                           <Popconfirm
-                            title="delete the element"
-                            description="Are you sure to delete tis element ?"
+                            title="hide element"
+                            description="Are you sure to hide this element ?"
                             onConfirm={confirm}
                             okText="Yes"
                             cancelText="No"
-                            className="bg-slate-50 dark:bg-slate-900"
+                            className=" text-gray-500 dark:bg-slate-900"
                           >
-                            <Trash size={20} />
+                            ...
                           </Popconfirm>
                         </button>
                       </div>

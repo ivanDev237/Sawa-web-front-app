@@ -5,25 +5,24 @@ module.exports = {
   theme: {
     extend: {
       boxShadow: {
-        'custom': '0 4px 30px rgba(0, 0, 0, 0.1)',
+        custom: "0 4px 30px rgba(0, 0, 0, 0.1)",
       },
       colors: {
         primary: {
-          light: "#0F8156",
-          dark: "#0D6745",
-          hoverElementsLight: "#E6F5EF",
+          light: "#10936A",
+          dark: "",
         },
         background: {
-          light: "#F3F4F6",
-          dark: "#1A1A1A",
+          light: "#F1F5F9",
+          dark: "#0f172a",
         },
         text: {
-          light: "#000000",
+          light: "#171717",
           dark: "#E5E7EB",
         },
         card: {
-          light: "#FFFFFF",
-          dark: "#252525",
+          light: "#ffffff",
+          dark: "#0f172a",
         },
       },
 

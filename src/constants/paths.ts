@@ -6,44 +6,44 @@ export const PATH_SUPER_ADMIN = {
 
   PARTNERS: [
     {
-      LISTOFPARTNERS: "/partners/list",
+      LISTOFPARTNERS: "partners/list",
     },
     {
-      PARTNERS_SUBSCRIPTION: "/partners/subscription",
+      PARTNERS_SUBSCRIPTION: "partners/subscription",
     },
     {
-      MANAGE_QR_CODE: "/partners/qr_code_manage",
+      MANAGE_QR_CODE: "partners/qr_code_manage",
     },
   ],
 
   SELLERS_MANAGEMENT: [
     {
-      ADD_NEW_SHOP: "/shops/add",
+      ADD_NEW_SHOP: "shops/add",
     },
     {
-      INACTIVE_SHOP_NEW_SHOP: "/shops/inactive_new_shop",
+      INACTIVE_SHOP_NEW_SHOP: "shops/inactive_new_shop",
     },
   ],
 
   PRODUCTS_MANAGEMENT: [
     {
-      VIEW_ALL_PRODUCTS: "/products/view_all",
-      EVALUATE_PRODUCTS: "/products/evaluate",
+      VIEW_ALL_PRODUCTS: "products/view_all",
+      EVALUATE_PRODUCTS: "products/evaluate",
     },
   ],
 
   SUBSCRIPTION_AREA: [
     {
-      SUBSCRIPTION_HISTORY: "/subscriptionArea_history",
-      SUBSCRIPTION_NOTIFICATION: "/subscriptionArea_notifications",
-      MANAGE_SUBCRIPTION: "/subscriptionArea_manage",
+      SUBSCRIPTION_HISTORY: "subscriptionArea_history",
+      SUBSCRIPTION_NOTIFICATION: "subscriptionArea_notifications",
+      MANAGE_SUBCRIPTION: "subscriptionArea_manage",
     },
   ],
 
   STATS: [
     {
-      PLATFORM_PERFORMANCES: "/plateform_performance/view",
-      USER_ANALYSIS: "/plateform_user_analysis",
+      PLATFORM_PERFORMANCES: "plateform_performance/view",
+      USER_ANALYSIS: "plateform_user_analysis",
     },
   ],
 
@@ -52,8 +52,8 @@ export const PATH_SUPER_ADMIN = {
     {
       REPORT_AND_EXPORT: [
         {
-          REPORT_HISTORY: "/report/history",
-          DOWLOAD_REPORT: "/report/download",
+          REPORT_HISTORY: "report/history",
+          DOWLOAD_REPORT: "report/download",
         },
       ],
     },
@@ -61,14 +61,14 @@ export const PATH_SUPER_ADMIN = {
 
   PLATFORM_CONFIGURATION: [
     {
-      GENERAL_SETTINGS: "/app_settings/general",
-      PAYMENTS_SETTINGS: "/app_settings/payment",
+      GENERAL_SETTINGS: "app_settings/general",
+      PAYMENTS_SETTINGS: "app_settings/payment",
     },
   ],
   VENDOR_FAQS: [
     {
-      ALL_FAQS: "/vendor_faqs/all",
-      ADD_NEW_FAQ: "/vendor_faqs/add",
+      ALL_FAQS: "vendor_faqs/all",
+      ADD_NEW_FAQ: "vendor_faqs/add",
     },
   ],
 };

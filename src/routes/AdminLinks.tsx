@@ -1,3 +1,4 @@
+import PartnersList from "../components/PartnerList";
 import { PATH_SUPER_ADMIN } from "../constants/paths";
 import DashboardAdminLayout from "../Layout/DashboardAdminLayout";
 import DashboardPage from "../pages/Admin_Pages/DashboardPage/Dashboard_page";
@@ -12,6 +13,10 @@ const dashboardAdminLinks = [
       {
         path: PATH_SUPER_ADMIN.HOME,
         element: <DashboardPage />,
+      },
+      {
+        path: PATH_SUPER_ADMIN.PARTNERS[0].LISTOFPARTNERS,
+        element: <PartnersList />,
       },
       {
         path: PATH_SUPER_ADMIN.ADMINISTRATION_TOOLS[0].MANAGE_NOTIFICATIONS,
