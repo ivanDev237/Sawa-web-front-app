@@ -110,7 +110,7 @@ const MenuListes: MenuLists[] = [
 
   {
     title: "Administration Tools",
-    label: "Manage Notifs",
+    label: "Notifs history",
     icon: NotificationsIcon,
     link: "notifications_manage",
     expanded: false,
